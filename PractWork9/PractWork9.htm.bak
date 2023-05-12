@@ -1,0 +1,15 @@
+<html>
+
+ <head>
+	<title>Hello World</title>
+ </head>
+ 
+ <body>
+	<script src="script.js"></script>
+	
+	<noscript>
+	Ваш браузер не поддерживает JS, или его поддержка отключена
+	</noscript>
+ </body>
+ 
+</html>

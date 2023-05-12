@@ -1,0 +1,28 @@
+var a = 52;
+var b = 67;
+var c = 568;
+document.write("Минимальное число: ",Math.min(a, b, c), "<br/>");
+
+let seasons = ["Зима", "Весна", "Лето", "Осень"];
+var season = prompt("Какое время года по счёту вам нужно");
+var result = seasons[season];
+if(season < 1 || season > 4)
+{
+	document.write("Такого месяца нет");
+}
+else
+{document.write(result);}
+
+var months = [31, -1, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+var year = prompt("Введите год");
+var month = prompt("Введите номер месяца")
+if(year % 4 & year % 100 == false || year % 400)
+{
+	if(months[month] == -1){
+	document.write("Год является весокосным", "<br/>", "Дней в месяце: 29");}
+	else{document.write("Год является весокосным", "<br/>", "Дней в месяце: ", months[month]);}
+}
+else
+{
+	document.write("Год не является весокосным", "<br/>", "Дней в месяце: ", months[month]);	
+}
