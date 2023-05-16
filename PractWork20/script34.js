@@ -1,0 +1,68 @@
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+var circles = [];
+
+function Circle(x, y, radius, dx, dy)
+{
+	this.x = x;
+	this.y = y;
+	this.radius = radius;
+	this.dx = dx;
+	this.dy = dy;
+	
+	this.draw = function()
+	{
+		ctx.beginPath();
+		ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+		ctx.fillStyle = "gold";
+		ctx.fill();
+		ctx.closePath();
+	}
+	
+	this.update = function()
+	{
+		if(this.x + this.radius > canvas.width || this.x - this.radius < 0){
+			this.dx = -this.dx;
+		}
+		
+		if(this.y + this.radius > canvas.height || this.y - this.radius < 0){
+			this.dy = -this.dy;
+		}
+		
+		this.x += this.dx;
+		this.y += this.dy
+		
+		this.draw();
+	}
+}
+
+function start()
+{
+	circles.length = 0;
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	
+	const numCircles = document.getElementById("numCircles").valueAsNumber;
+	for(let i = 0; i < numCircles; i++)
+	{
+		const radius = 20;
+		const x = Math.random() * (canvas.width - radius * 2 ) + radius;
+		const y = Math.random() * (canvas.height - radius * 2) + radius;
+		const dx = (Math.random() - 0.5) * 10;
+		const dy = (Math.random() - 0.5) * 10;
+		const circle = new Circle(x, y, radius, dx, dy);
+		circles.push(circle);
+	}
+	
+	animate();
+}
+
+function animate()
+{
+	requestAnimationFrame(animate);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	
+	for(let i = 0; i < circles.length; i++)
+	{
+		circles[i].update();
+	}
+}

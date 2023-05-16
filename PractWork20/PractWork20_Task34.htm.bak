@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+
+ <head>
+	<title>Заголовок</title>
+	<style> canvas{border: 3px solid gray;}</style>
+	
+ </head>
+ 
+ <body>
+	
+	<input type = "number" id = "numCircles" min = "1" >
+	<button onclick = "">Начать</button>
+	<p id = "timer"><p/>
+	<canvas id = "myCanvas" height = "400" width = "400" ></canvas>
+	
+	<script src="script34.js"></script>
+ </body>
+ 
+</html>
