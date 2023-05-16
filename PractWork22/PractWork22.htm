@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+
+ <head>
+	<title>Заголовок</title>
+	<style> 
+		.container{display: flex; flex-direction: column; align-items: center; }
+		button{width: 55px; height: 55px; background-color: gold; border: 2px solid gray; font-size: 20px; margin: 5px; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);}
+		button.active{box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);}
+		canvas{display: block; margin: 0 auto;}
+	</style>
+	
+ </head>
+ 
+ <body>
+	
+	<canvas id = "myCanvas" width = "500" height = "500" style = "background-color: #eee; border: 1px solid gray;"> </canvas>
+	
+	<div class = "container" >
+		<button id = "up">↑</button>
+		<div>
+			<button id = "left">←</button>
+			<button id = "down">↓</button>
+			<button id = "right">→</button>
+		</div>
+	</div>
+	<script src="script.js"></script>
+ </body>
+ 
+</html>
